@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "metabase-export"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Export Metabase questions to a tree of .sql files that mirrors the collection tree"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -32,3 +32,6 @@ metabase-export = "metabase_export.cli:main"
 
 [dependency-groups]
 dev = ["pytest>=8"]
+
+[tool.hatch.version]
+path = "src/metabase_export/__init__.py"
